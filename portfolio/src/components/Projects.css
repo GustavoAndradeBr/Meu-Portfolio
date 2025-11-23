@@ -1,0 +1,10 @@
+.Projects {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 100vh; /* ocupa exatamente a altura da tela */
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  font-size: 2rem;
+  background: var(--bg-gradient-li);
+}

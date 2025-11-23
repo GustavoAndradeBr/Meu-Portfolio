@@ -1,0 +1,111 @@
+.Knowledge {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  min-height: 100vh; /* ocupa exatamente a altura da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  font-size: 2rem;
+  background: var(--bg-gradient-light);
+}
+
+.Knowledge h2 {
+  margin-bottom: 2.5rem;
+}
+.Knowledge h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+}
+
+.grid {
+  gap: 10rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* duas colunas */
+  align-items: start; /* evita desalinhamento vertical */
+}
+
+.coluna {
+  max-width: 500px;
+  text-align: center;
+  padding: 20px;
+  border: solid 1px white;
+  margin: 0;
+  backdrop-filter: blur(30px);
+  border: solid 2px rgba(255, 255, 255, 0.18);
+  background-color: #a1a1a100;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  /* PROFUNDIDADE INICIAL SUTIL (Base) */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  /* GARANTE A ANIMAÇÃO SUAVE EM TODAS AS PROPRIEDADES */
+  transition: all 0.3s ease; /* 0.3 segundos é um bom tempo para hover */
+
+  /* Garante que o elemento possa receber transformações 3D (boa prática) */
+  transform: translateY(0);
+}
+
+.coluna:hover {
+  /* 1. MOVIMENTO: Move o item 5 pixels para cima */
+  transform: translateY(-5px);
+
+  /* 2. SOMBRA: Aumenta a sombra para dar sensação de profundidade/elevação */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* 3. FEEDBACK VISUAL (Opcional): Uma leve mudança de cor no fundo */
+  background-color: var(--bg-footer);
+}
+
+.coluna img {
+  width: 100%;
+  max-width: 200px; /* evita ficar gigante */
+  display: block;
+  margin: 0 auto;
+}
+
+/* ---------------------------------- */
+/* 1. Estrutura da Lista (A UL) */
+/* ---------------------------------- */
+.tech-tags {
+  /* 1. Remove as bolinhas (bullet points) padrão */
+  list-style: none;
+
+  /* 2. Remove o padding/margem padrão da lista */
+  padding: 0;
+  margin: 20px 0 0;
+
+  /* 3. TRANSFORMA a lista em um container Flex */
+  display: flex;
+
+  /* 4. PERMITE que os itens quebrem para a linha de baixo */
+  flex-wrap: wrap;
+
+  /* 5. Espaçamento entre as linhas */
+  gap: 10px;
+}
+
+/* ---------------------------------- */
+/* 2. Estilo dos Itens (O LI - A PÍLULA) */
+/* ---------------------------------- */
+.tech-tags li {
+  /* Padding interno para dar ar à pílula */
+  padding: 6px 12px;
+
+  /* Borda suave */
+  border-radius: 20px;
+
+  /* Fundo da pílula - pode usar o cinza sutil ou a cor da sua marca */
+  background-color: #f0f0f0;
+
+  /* Cor e tamanho da fonte */
+  color: var(--text-color);
+  font-size: 0.9em;
+
+  /* Efeito de sombra sutil ao passar o mouse */
+  transition: background-color 0.2s;
+}
+
+.tech-tags li:hover {
+  background-color: #d3e0f0;
+}

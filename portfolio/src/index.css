@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Para a barra de rolagem principal do corpo do site */
+body::-webkit-scrollbar {
+  width: 12px; /* Largura total da barra de rolagem */
+  background-color: transparent; /* Opcional: define o fundo do contêiner da barra */
+}
+
+/* A TRILHA (Fundo da Barra) */
+body::-webkit-scrollbar-track {
+  background: #fafaf5; /* Cor de fundo da trilha no tema claro */
+  border-radius: 10px; /* Borda arredondada */
+}
+
+/* O POLEGAR (O Puxador que você arrasta) */
+body::-webkit-scrollbar-thumb {
+  background-color: #000000; /* Cor principal da sua marca (roxo) */
+  border-radius: 10px;
+  border: 3px solid #f1f1f1; /* Adiciona uma pequena borda para destacar do fundo */
+}
+
+/* Efeito Hover no Polegar (Opcional) */
+body::-webkit-scrollbar-thumb:hover {
+  background: #e30e52; /* Cor ligeiramente mais escura ao passar o mouse */
+}
+
+body.dark::-webkit-scrollbar {
+  width: 12px; /* Largura total da barra de rolagem */
+  background-color: #1a192d; /* Opcional: define o fundo do contêiner da barra */
+}
+body.dark::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #1a192d, #0f0e18);
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  background-color: #50e5ff; /* Cor de destaque (ciano) */
+  border: 3px solid #2e2e2e; /* Borda de acordo com o fundo escuro */
+}
+body.dark::-webkit-scrollbar-thumb:hover {
+  background: #e30e52; /* Cor ligeiramente mais escura ao passar o mouse */
+}
+
+:root {
+  --bg-gradient-light: linear-gradient(to bottom, #fafaf5, #ecf3f1);
+  --bg-gradient-li: linear-gradient(to top, #fafaf5, #ecf3f1);
+
+  --text-color: #000000;
+  --bg-bg: #d8d8d8;
+  --bg-footer: #d8d8d8;
+}
+
+body.dark {
+  --bg-gradient-light: linear-gradient(to bottom, #1a192d, #0f0e18);
+  --bg-gradient-li: linear-gradient(to bottom, #0f0e18, #1a192d);
+  --text-color: #ffffff;
+  --bg-bg: #0d0c14ee;
+  --bg-footer: #0d0c14ee;
+}
+
+/* Seletor: Aplica regras APENAS quando o <body> tem a classe 'dark' */
+body.dark .contato-item {
+  /* 1. Cores de Fundo e Texto (Ajuste se necessário) */
+  /* Se o background do cartão for branco no modo claro, mude para escuro aqui: */
+  background-color: #55555622;
+  color: #f0f0f0; /* Cor do texto claro */
+
+  /* 2. SOMBRA BASE (Brilho Sutil) */
+  /* Sombra branca e transparente para simular profundidade (em vez de sombra preta) */
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
+
+/* 3. ESTADO HOVER (Elevação com Brilho Intenso) */
+body.dark .contato-item:hover {
+  /* Mantém o movimento de levantamento: */
+  transform: translateY(-5px);
+
+  /* Aumenta a Sombra/Brilho branco */
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1),
+    0 4px 8px rgba(255, 255, 255, 0.05);
+
+  /* Levemente mais escuro para dar feedback ao hover */
+  background-color: #0d0c14ee;
+}
+
+/* No tema escuro, troca a cor da palavra dinâmica */
+body.dark .dynamic-word-container {
+  color: #62d8ee; /* Ciano ou outra cor de destaque */
+}

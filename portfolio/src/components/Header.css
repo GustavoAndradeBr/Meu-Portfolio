@@ -1,0 +1,53 @@
+header {
+  backdrop-filter: blur(30px);
+  border: solid 2px rgba(255, 255, 255, 0.18);
+  background-color: #a1a1a100;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.1rem;
+  padding: 1rem;
+  z-index: 100;
+  font-family: "Fira Code", monospace;
+}
+
+.Menu a {
+  position: relative;
+  text-decoration: none;
+  margin: 0 0.6rem;
+  font-size: 1.2rem;
+  margin-left: 1.2rem;
+  color: var(--text-color);
+}
+
+.Menu a::after {
+  content: ""; /* cria algo vazio */
+  position: absolute; /* permite posicionar */
+  width: 0%; /* começa pequeno */
+  height: 2px; /* altura da linha */
+  background: var(--text-color); /* cor da linha */
+  bottom: -3px; /* fica embaixo do link */
+  left: 0; /* inicia à esquerda */
+  transition: 0.3s ease; /* animação */
+}
+
+.Menu a:hover::after {
+  width: 100%; /* linha cresce */
+}
+
+.botaotema {
+  margin-right: 1rem;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: 0.3;
+}
+
+.botaotema:hover {
+  color: #ffb703;
+  transform: scale(1.1); /* opcional, dá um zoom suave */
+}
