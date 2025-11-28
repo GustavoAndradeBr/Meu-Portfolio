@@ -10,7 +10,22 @@ header {
   margin-top: 0.1rem;
   padding: 1rem;
   z-index: 100;
+  overflow: hidden;
   font-family: "Fira Code", monospace;
+
+  /* GARANTE A ANIMAÇÃO SUAVE EM TODAS AS PROPRIEDADES */
+  transition: all 0.3s ease; /* 0.3 segundos é um bom tempo para hover */
+
+  /* Garante que o elemento possa receber transformações 3D (boa prática) */
+  transform: translateY(0);
+}
+
+header:hover {
+  /* 1. MOVIMENTO: Move o item 5 pixels para cima */
+  transform: translateY(-2px);
+
+  /* 2. SOMBRA: Aumenta a sombra para dar sensação de profundidade/elevação */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .Menu a {

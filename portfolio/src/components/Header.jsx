@@ -1,4 +1,9 @@
 import "./Header.css";
+import HomePhoto from "../assets/home.svg";
+// import AboutPhoto from "../assets/about.svg";
+// import KnowPhoto from "../assets/know.svg";
+// import ProjectsPhoto from "../assets/projects.svg";
+// import ContactPhoto from "../assets/contact.svg";
 
 export default function Header() {
   function toggleTheme() {

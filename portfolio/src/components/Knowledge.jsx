@@ -12,12 +12,15 @@ export default function Knowledge() {
           <h3>Front End</h3>
           <img src={frontPhoto}></img>
           <ul class="tech-tags">
-            <li>React.js</li>
             <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Vue.js</li>
             <li>Next.js</li>
+            <li>Angular</li>
+            <li>HTML5 / CSS3</li>
             <li>Tailwind CSS</li>
             <li>Sass</li>
-            <li>HTML5 / CSS3</li>
             <li>Redux</li>
           </ul>
         </div>
@@ -26,13 +29,14 @@ export default function Knowledge() {
           <h3>Back End</h3>
           <img src={backPhoto}></img>
           <ul class="tech-tags">
-            <li>React.js</li>
-            <li>TypeScript</li>
-            <li>Next.js</li>
-            <li>Tailwind CSS</li>
-            <li>Sass</li>
-            <li>HTML5 / CSS3</li>
-            <li>Redux</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
           </ul>
         </div>
       </div>

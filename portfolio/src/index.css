@@ -51,6 +51,7 @@ body.dark::-webkit-scrollbar-thumb:hover {
   --bg-gradient-light: linear-gradient(to bottom, #fafaf5, #ecf3f1);
   --bg-gradient-li: linear-gradient(to top, #fafaf5, #ecf3f1);
 
+  --tags-bg: #f0f0f0;
   --text-color: #000000;
   --bg-bg: #d8d8d8;
   --bg-footer: #d8d8d8;
@@ -59,6 +60,7 @@ body.dark::-webkit-scrollbar-thumb:hover {
 body.dark {
   --bg-gradient-light: linear-gradient(to bottom, #1a192d, #0f0e18);
   --bg-gradient-li: linear-gradient(to bottom, #0f0e18, #1a192d);
+  --tags-bg: #f0f0f01b;
   --text-color: #ffffff;
   --bg-bg: #0d0c14ee;
   --bg-footer: #0d0c14ee;

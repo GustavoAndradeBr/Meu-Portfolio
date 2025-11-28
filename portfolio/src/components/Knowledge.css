@@ -12,6 +12,7 @@
 
 .Knowledge h2 {
   margin-bottom: 2.5rem;
+  margin-top: 4.5rem;
 }
 .Knowledge h3 {
   font-family: "Press Start 2P", cursive;
@@ -19,7 +20,7 @@
 }
 
 .grid {
-  gap: 10rem;
+  gap: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* duas colunas */
   align-items: start; /* evita desalinhamento vertical */
@@ -96,7 +97,7 @@
   border-radius: 20px;
 
   /* Fundo da pílula - pode usar o cinza sutil ou a cor da sua marca */
-  background-color: #f0f0f0;
+  background-color: var(--tags-bg);
 
   /* Cor e tamanho da fonte */
   color: var(--text-color);
@@ -107,5 +108,5 @@
 }
 
 .tech-tags li:hover {
-  background-color: #d3e0f0;
+  background-color: #b4cdec;
 }
