@@ -1,28 +1,50 @@
+import { motion } from "framer-motion";
 import "./Header.css";
-import HomePhoto from "../assets/home.svg";
-// import AboutPhoto from "../assets/about.svg";
-// import KnowPhoto from "../assets/know.svg";
-// import ProjectsPhoto from "../assets/projects.svg";
-// import ContactPhoto from "../assets/contact.svg";
 
 export default function Header() {
-  function toggleTheme() {
-    document.body.classList.toggle("dark");
-  }
+  const toggleTheme = () => document.body.classList.toggle("dark");
 
   return (
-    <header>
-      <nav className="Menu">
-        <a href="#Home">Home</a>
-        <a href="#About">Sobre Mim</a>
-        <a href="#Knowledge">Conhecimentos</a>
-        <a href="#Projects">Projetos</a>
-        <a href="#Contact">Contatos</a>
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <nav className="Menu" aria-label="Navegação principal">
+        {["Home", "Sobre Mim", "Conhecimentos", "Projetos", "Contatos"].map(
+          (item, i) => {
+            const hrefs = [
+              "#Home",
+              "#About",
+              "#Knowledge",
+              "#Projects",
+              "#Contact",
+            ];
+            return (
+              <motion.a
+                key={item}
+                href={hrefs[i]}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 * i }}
+              >
+                {item}
+              </motion.a>
+            );
+          },
+        )}
       </nav>
 
-      <button onClick={toggleTheme} className="botaotema">
+      <motion.button
+        onClick={toggleTheme}
+        className="botaotema"
+        aria-label="Alternar tema"
+        whileHover={{ scale: 1.2, color: "#ffb703" }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
         ☾☼
-      </button>
-    </header>
+      </motion.button>
+    </motion.header>
   );
 }

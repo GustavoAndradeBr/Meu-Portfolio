@@ -2,10 +2,10 @@
   font-family: "Poppins", sans-serif;
   gap: 7rem;
   width: 100%;
-  height: 100vh; /* ocupa exatamente a altura da tela */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza verticalmente */
+  align-items: center;
   justify-content: center;
   background: var(--bg-gradient-light);
 }
@@ -14,81 +14,77 @@
   font-size: 2rem;
 }
 
-/* Container que agrupa todos os contatos (opcional, se você quiser eles lado a lado) */
 .contatos-wrapper {
   font-family: "Fira Code", monospace;
-  display: flex; /* Se quiser os 4 contatos LADO A LADO */
+  display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* 1. Estilo do link individual (A ÁREA CLICÁVEL COMPLETA) */
 .contato-item {
-  display: flex; /* Coloca o Ícone e os Textos LADO A LADO */
+  display: flex;
   align-items: center;
-  text-decoration: none; /* Remove sublinhado */
-  color: inherit; /* Mantém a cor do texto do pai */
+  text-decoration: none;
+  color: inherit;
   padding: 1rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  /* PROFUNDIDADE INICIAL SUTIL (Base) */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-  /* GARANTE A ANIMAÇÃO SUAVE EM TODAS AS PROPRIEDADES */
-  transition: all 0.3s ease; /* 0.3 segundos é um bom tempo para hover */
-
-  /* Garante que o elemento possa receber transformações 3D (boa prática) */
-  transform: translateY(0);
+  transition: all 0.3s ease;
 }
 
 .contato-item:hover {
-  /* 1. MOVIMENTO: Move o item 5 pixels para cima */
   transform: translateY(-5px);
-
-  /* 2. SOMBRA: Aumenta a sombra para dar sensação de profundidade/elevação */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  /* 3. FEEDBACK VISUAL (Opcional): Uma leve mudança de cor no fundo */
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #f8f8f8;
 }
 
-/* 2. Estilo da Caixa do Ícone */
+body.dark .contato-item {
+  background-color: #55555622;
+  color: #f0f0f0;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .contato-item:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 10px 20px rgba(255, 255, 255, 0.1),
+    0 4px 8px rgba(255, 255, 255, 0.05);
+  background-color: #0d0c14ee;
+}
+
 .icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  margin-right: 1rem; /* Espaço entre o ícone e o texto */
-  /* Seu estilo de cor de fundo/borda aqui */
+  margin-right: 1rem;
 }
 
 .icon-box svg {
-  /* Altere estes valores para o tamanho desejado (ex: 32px ou 2rem) */
   width: 2rem;
   height: 2rem;
-
-  /* Você pode adicionar um espaçamento extra aqui, se necessário */
   padding: 2px;
 }
 
-/* 3. Estilo da Coluna de Textos */
 .info-textos {
   display: flex;
-  flex-direction: column; /* Empilha o Nome sobre o Endereço */
-  /* Remove as margens padrão dos parágrafos */
+  flex-direction: column;
   margin: 0;
 }
 
 .nome-contato {
-  font-weight: bold; /* Título (Email, Github) */
+  font-weight: bold;
   font-size: 1rem;
   margin: 0;
 }
 
 .endereco {
-  font-size: 0.85rem; /* Endereço real */
+  font-size: 0.85rem;
   color: #666;
   margin: 0;
 }

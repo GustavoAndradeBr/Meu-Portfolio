@@ -1,71 +1,107 @@
-import React, { useState, useEffect } from "react"; // 1. Importar hooks
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import myPhoto from "../assets/asEU.png";
 import "./Main.css";
 import Knowledge from "./Knowledge";
 import Projects from "./Projects";
 import Contact from "./Contact";
 
-export default function Main() {
-  // Lista de palavras que irão alternar
-  const words = [
-    "FULL-STACK",
-    "FRONT-END",
-    "BACK-END",
-    "UI/UX",
-    "JAVASCRIPT",
-    "REACT",
-    "WEB",
-  ];
+const words = [
+  "FULL-STACK",
+  "FRONT-END",
+  "BACK-END",
+  "UI/UX",
+  "JAVASCRIPT",
+  "REACT",
+  "WEB",
+];
 
-  const [currentWord, setCurrentWord] = useState(words[0]);
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay },
+  }),
+};
+
+export default function Main() {
   const [wordIndex, setWordIndex] = useState(0);
 
-  // 2. Lógica para Trocar a Palavra
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setWordIndex((prevIndex) => {
-        const newIndex = (prevIndex + 1) % words.length;
-        setCurrentWord(words[newIndex]);
-        return newIndex;
-      });
-    }, 2500); // Troca a cada 2.5 segundos
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }, 2500);
 
-    // Função de limpeza
     return () => clearInterval(intervalId);
-  }, [words]); // Adicionado 'words' ao array de dependências (apesar de ser constante, é boa prática)
+  }, []);
 
   return (
     <main>
-      <section id="Home" className="Home">
-        <h1>Gustavo Andrade</h1>
-        <h2>
+      <section id="Home" className="Home" aria-label="Apresentação">
+        <motion.h1
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.1}
+        >
+          Gustavo Andrade
+        </motion.h1>
+
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.3}
+        >
           Desenvolvedor
-          <span className="dynamic-word-container">{currentWord}</span>
-        </h2>
-        <p>Transformando ideias em experiências digitais interativas.</p>
+          <span className="dynamic-word-container" aria-live="polite">
+            {words[wordIndex]}
+          </span>
+        </motion.h2>
+
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.5}
+        >
+          Transformando ideias em experiências digitais interativas.
+        </motion.p>
       </section>
 
-      <section id="About" className="About">
-        <div id="sobreAlinhado">
+      <section id="About" className="About" aria-label="Sobre mim">
+        <motion.div
+          id="sobreAlinhado"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2>Sobre Mim</h2>
-          <img
-            src={myPhoto}
-            alt="Imagem de arte pixelada, um garoto no computador"
-          ></img>
-        </div>
-        <div id="TextAbout">
+          <img src={myPhoto} alt="Arte pixelada de um garoto no computador" />
+        </motion.div>
+
+        <motion.div
+          id="TextAbout"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <p>
-            Olá! Sou Gustavo Andrade, Desenvolvedor apaixonado por transformar
+            Olá! Sou Gustavo Andrade, desenvolvedor apaixonado por transformar
             ideias em experiências digitais. Trabalho com React, JavaScript e
             CSS, criando interfaces modernas, rápidas e responsivas. Gosto de
             desenvolver sites pensados para o usuário, com navegação simples e
             uma experiência agradável.
           </p>
-        </div>
+        </motion.div>
       </section>
-      <Knowledge></Knowledge>
-      <Projects></Projects>
-      <Contact></Contact>
+
+      <Knowledge />
+      <Projects />
+      <Contact />
     </main>
   );
 }

@@ -2,22 +2,45 @@ main {
   text-align: center;
   color: var(--text-color);
 }
-/* Garante alinhamento e espaço entre "Desenvolvedor" e a palavra que muda */
-.Home h2 {
+
+.Home {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gradient-light);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.Home > h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.Home > h2 {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-}
-
-/* Onde a mágica da animação acontece */
-.dynamic-word-container {
-  animation: fadeInOut 2.5s infinite;
-  font-weight: 700;
-  /* Cor de destaque para o tema claro */
+  justify-content: center;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 400;
   color: #3c3c86;
 }
 
-/* DEFINIÇÃO DA ANIMAÇÃO */
+.Home > p {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  max-width: 700px;
+}
+
+.dynamic-word-container {
+  animation: fadeInOut 2.5s infinite;
+  font-weight: 700;
+  color: #3c3c86;
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -37,92 +60,47 @@ main {
   }
 }
 
-.Home {
-  font-family: "Poppins", sans-serif;
-  background: var(--bg-gradient-light);
-  width: 100%;
-  height: 100vh; /* ocupa exatamente a altura da tela */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centraliza verticalmente */
-  justify-content: center; /* centraliza horizontalmente */
-  gap: 0.6rem;
-}
-
-.Home > h1 {
-  font-size: 4rem;
-}
-
-.Home > h2 {
-  /* A profissão é importante, mas não tão grande quanto o nome */
-  font-size: 2rem;
-  font-weight: 400; /* Regular ou light */
-  /* (Opcional) Dê a ele uma cor de destaque da paleta da imagem! */
-  color: #3c3c86; /* Roxo escuro do pixel art */
-}
-
-.Home > p {
-  font-family: "Fira Code", monospace;
-  font-size: 1.2rem;
-  max-width: 700px; /* Limita a largura para melhor leitura */
-}
-
 .About {
-  min-height: 100vh; /* Mudei de height para min-height para não cortar conteúdo no celular */
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap; /* ESSENCIAL: Permite que um caia para baixo do outro */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   background: var(--bg-gradient-li);
-  gap: 2rem; /* Espaço entre os blocos (substitui margens laterais manuais) */
-  padding: 20px; /* Um respiro nas bordas da tela */
+  gap: 2rem;
+  padding: 20px;
 }
 
-/* O Bloco da Imagem */
 #sobreAlinhado {
-  /* A MÁGICA DO FLEXBOX: */
-  flex: 0 0 450px; /* Não cresce (0), não encolhe (0), base de 350px */
-
-  /* Seu estilo visual */
+  flex: 0 0 450px;
   font-family: "Press Start 2P", cursive;
   font-size: 1.4rem;
   padding-top: 0.6rem;
   border: solid 2px rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.37);
-
-  /* Centralizar o texto "Sobre Mim" e a imagem dentro da caixinha */
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* Para garantir que o card não estoure a tela no mobile muito pequeno */
   max-width: 100%;
 }
 
 #sobreAlinhado img {
-  width: 100%; /* Ocupa a largura total do container (350px) */
+  width: 100%;
   height: auto;
   object-fit: cover;
-
-  margin-top: 10px; /* Separa um pouco do título */
+  margin-top: 10px;
 }
 
-/* O Bloco de Texto */
 #TextAbout {
-  /* A MÁGICA DO FLEXBOX: */
-  flex: 1; /* Cresça para ocupar TODO o espaço restante */
-  min-width: 300px; /* Se ficar menor que 300px, jogue para a linha de baixo */
-
-  /* Seu estilo visual */
+  flex: 1;
+  min-width: 300px;
   font-family: "Poppins", sans-serif;
-  padding: 0.5rem; /* Aumentei um pouco para ficar mais elegante */
+  padding: 0.5rem;
   backdrop-filter: blur(30px);
   border: solid 2px rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.37);
-
-  /* Limite para não ficar uma linha de texto infinita em monitores gigantes */
   max-width: 800px;
 }

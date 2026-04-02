@@ -6,3 +6,8 @@ footer {
   text-align: center;
   background-color: var(--bg-footer);
 }
+
+footer p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}

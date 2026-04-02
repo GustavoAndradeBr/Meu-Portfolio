@@ -12,20 +12,6 @@ header {
   z-index: 100;
   overflow: hidden;
   font-family: "Fira Code", monospace;
-
-  /* GARANTE A ANIMAÇÃO SUAVE EM TODAS AS PROPRIEDADES */
-  transition: all 0.3s ease; /* 0.3 segundos é um bom tempo para hover */
-
-  /* Garante que o elemento possa receber transformações 3D (boa prática) */
-  transform: translateY(0);
-}
-
-header:hover {
-  /* 1. MOVIMENTO: Move o item 5 pixels para cima */
-  transform: translateY(-2px);
-
-  /* 2. SOMBRA: Aumenta a sombra para dar sensação de profundidade/elevação */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .Menu a {
@@ -38,18 +24,18 @@ header:hover {
 }
 
 .Menu a::after {
-  content: ""; /* cria algo vazio */
-  position: absolute; /* permite posicionar */
-  width: 0%; /* começa pequeno */
-  height: 2px; /* altura da linha */
-  background: var(--text-color); /* cor da linha */
-  bottom: -3px; /* fica embaixo do link */
-  left: 0; /* inicia à esquerda */
-  transition: 0.3s ease; /* animação */
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--text-color);
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s ease;
 }
 
 .Menu a:hover::after {
-  width: 100%; /* linha cresce */
+  width: 100%;
 }
 
 .botaotema {
@@ -59,10 +45,10 @@ header:hover {
   font-size: 1.6rem;
   cursor: pointer;
   color: var(--text-color);
-  transition: 0.3;
+  transition: 0.3s ease;
 }
 
 .botaotema:hover {
   color: #ffb703;
-  transform: scale(1.1); /* opcional, dá um zoom suave */
+  transform: scale(1.1);
 }
