@@ -22,11 +22,11 @@ const projects = [
     featured: true,
   },
   {
-    title: "Meu Casamento",
+    title: "Meu Casamento (EM DESENVOLVIMENTO)",
     description:
       "Desenvolvi um site de casamento interativo, com foco em experiência do usuário, animações suaves e design moderno, permitindo apresentação do evento, confirmação de presença e interação com convidados.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Node.js"],
-    link: "https://www.lojaolfati.com.br/",
+    link: "",
     video: "/videos/Meucasa.mp4",
     featured: true,
   },
@@ -51,7 +51,7 @@ const projects = [
     description:
       "Site desenvolvido para médico ortopedista em Ribeirão Preto, com projeto completo que abrange desde a definição de metadados até a construção do design, utilizando tecnologias simples, modernas e eficientes para garantir desempenho e boa experiência ao usuário.",
     tags: ["Tailwind CSS", "HTML", "Framer Motion", "JavaScript"],
-    link: "https://seusite.com",
+    link: "",
     video: "/videos/DrOrtopLucas.mp4",
   },
 ];
