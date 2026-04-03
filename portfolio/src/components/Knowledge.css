@@ -1,112 +1,323 @@
+/* ─── Section wrapper ─────────────────────────────────────────── */
 .Knowledge {
   font-family: "Poppins", sans-serif;
   width: 100%;
-  min-height: 100vh; /* ocupa exatamente a altura da tela */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza verticalmente */
-  justify-content: center; /* centraliza horizontalmente */
-  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
   background: var(--bg-gradient-light);
+  padding: 5rem 1.5rem;
 }
 
 .Knowledge h2 {
-  margin-bottom: 2.5rem;
-  margin-top: 4.5rem;
-}
-.Knowledge h3 {
   font-family: "Press Start 2P", cursive;
-  font-size: 1.5rem;
-}
-
-.grid {
-  gap: 5rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* duas colunas */
-  align-items: start; /* evita desalinhamento vertical */
-}
-
-.coluna {
-  max-width: 500px;
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
   text-align: center;
-  padding: 20px;
-  border: solid 1px white;
-  margin: 0;
-  backdrop-filter: blur(30px);
-  border: solid 2px rgba(255, 255, 255, 0.18);
-  background-color: #a1a1a100;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  /* PROFUNDIDADE INICIAL SUTIL (Base) */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.04em;
+}
 
-  /* GARANTE A ANIMAÇÃO SUAVE EM TODAS AS PROPRIEDADES */
-  transition: all 0.3s ease; /* 0.3 segundos é um bom tempo para hover */
+/* ─── Grid ──────────────────────────────────────────────────────── */
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1280px;
+}
 
-  /* Garante que o elemento possa receber transformações 3D (boa prática) */
-  transform: translateY(0);
+/* ─── Card ──────────────────────────────────────────────────────── */
+.coluna {
+  background: var(--bg-footer, rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 1.75rem 1.5rem;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .coluna:hover {
-  /* 1. MOVIMENTO: Move o item 5 pixels para cima */
-  transform: translateY(-5px);
-
-  /* 2. SOMBRA: Aumenta a sombra para dar sensação de profundidade/elevação */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  /* 3. FEEDBACK VISUAL (Opcional): Uma leve mudança de cor no fundo */
-  background-color: var(--bg-footer);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
 
-.coluna img {
-  width: 100%;
-  max-width: 200px; /* evita ficar gigante */
-  display: block;
-  margin: 0 auto;
-}
-
-/* ---------------------------------- */
-/* 1. Estrutura da Lista (A UL) */
-/* ---------------------------------- */
-.tech-tags {
-  /* 1. Remove as bolinhas (bullet points) padrão */
-  list-style: none;
-
-  /* 2. Remove o padding/margem padrão da lista */
-  padding: 0;
-  margin: 20px 0 0;
-
-  /* 3. TRANSFORMA a lista em um container Flex */
+/* ─── Card header ───────────────────────────────────────────────── */
+.coluna-header {
   display: flex;
-
-  /* 4. PERMITE que os itens quebrem para a linha de baixo */
-  flex-wrap: wrap;
-
-  /* 5. Espaçamento entre as linhas */
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
 }
 
-/* ---------------------------------- */
-/* 2. Estilo dos Itens (O LI - A PÍLULA) */
-/* ---------------------------------- */
-.tech-tags li {
-  /* Padding interno para dar ar à pílula */
-  padding: 6px 12px;
+.coluna-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
 
-  /* Borda suave */
-  border-radius: 20px;
-
-  /* Fundo da pílula - pode usar o cinza sutil ou a cor da sua marca */
-  background-color: var(--tags-bg);
-
-  /* Cor e tamanho da fonte */
+.coluna h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
   color: var(--text-color);
-  font-size: 0.9em;
-
-  /* Efeito de sombra sutil ao passar o mouse */
-  transition: background-color 0.2s;
+  margin: 0;
 }
 
-.tech-tags li:hover {
-  background-color: #b4cdec;
+.coluna-sub {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--text-color);
+  opacity: 0.35;
+  margin: 0;
+}
+
+/* ─── Skill list ────────────────────────────────────────────────── */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Rank badges ───────────────────────────────────────────────── */
+.rank-badge {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.55rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+/* S+ — dourado brilhante, badge animado */
+.rank-splus {
+  background: linear-gradient(
+    135deg,
+    rgba(253, 224, 71, 0.25),
+    rgba(245, 158, 11, 0.2)
+  );
+  color: #78350f;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+  animation: splus-pulse 2s ease-in-out infinite;
+}
+
+@keyframes splus-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0px rgba(245, 158, 11, 0);
+  }
+  50% {
+    box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
+  }
+}
+
+/* S — dourado sóbrio */
+.rank-s {
+  background: rgba(234, 179, 8, 0.15);
+  color: #92400e;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+/* A — azul */
+.rank-a {
+  background: rgba(59, 130, 246, 0.12);
+  color: #1e40af;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* B — verdinho */
+.rank-b {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+/* C — cinza */
+.rank-c {
+  background: rgba(107, 114, 128, 0.1);
+  color: #4b5563;
+  border: 1px solid rgba(107, 114, 128, 0.25);
+}
+
+/* estudando — laranja */
+.rank-learning {
+  background: rgba(251, 146, 60, 0.12);
+  color: #c2410c;
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  animation: badge-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+/* ─── Progress bar base ─────────────────────────────────────────── */
+.bar-track {
+  position: relative;
+  height: 10px;
+  background: rgba(128, 128, 128, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent calc(10% - 1px),
+    rgba(0, 0, 0, 0.06) calc(10% - 1px),
+    rgba(0, 0, 0, 0.06) 10%
+  );
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* S+ — dourado com shimmer intenso e glow */
+.bar-splus {
+  background: linear-gradient(
+    90deg,
+    #92400e,
+    #f59e0b,
+    #fef08a,
+    #f59e0b,
+    #92400e
+  );
+  background-size: 300% 100%;
+  animation: splus-shimmer 2s linear infinite;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes splus-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* S — dourado shimmer mais calmo */
+.bar-gold {
+  background: linear-gradient(90deg, #b45309, #fbbf24, #fde68a, #fbbf24);
+  background-size: 200% 100%;
+  animation: gold-shimmer 3s linear infinite;
+}
+
+@keyframes gold-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* A — verde */
+.bar-green {
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+}
+
+/* B — azul */
+.bar-blue {
+  background: linear-gradient(90deg, #d23030, #60a5fa);
+}
+
+/* C — cinza */
+.bar-gray {
+  background: linear-gradient(90deg, #6b7280, #9ca3af);
+}
+
+/* glint */
+.bar-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ─── Loading bar (skills em aprendizado) ───────────────────────── */
+.bar-loading {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.bar-loading-inner {
+  height: 100%;
+  width: 45%;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #fb923c,
+    #fdba74,
+    transparent
+  );
+  animation: loading-sweep 1.8s ease-in-out infinite;
+}
+
+@keyframes loading-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+/* ─── deixar mais responsivo ────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Knowledge h2 {
+    font-size: 1rem;
+  }
+
+  .coluna h3 {
+    font-size: 0.85rem;
+  }
+
+  .coluna-img {
+    width: 110px;
+    height: 110px;
+  }
 }

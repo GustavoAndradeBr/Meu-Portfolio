@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import myPhoto from "../assets/asEU.png";
+import myPhoto from "/public/images/asEU.png";
 import "./Main.css";
 import Knowledge from "./Knowledge";
 import Projects from "./Projects";
@@ -66,7 +66,7 @@ export default function Main() {
           animate="visible"
           custom={0.5}
         >
-          Transformando ideias em experiências digitais interativas.
+          Código limpo. Interfaces que funcionam. Resultados reais.
         </motion.p>
       </section>
 
@@ -90,11 +90,10 @@ export default function Main() {
           viewport={{ once: true }}
         >
           <p>
-            Olá! Sou Gustavo Andrade, desenvolvedor apaixonado por transformar
-            ideias em experiências digitais. Trabalho com React, JavaScript e
-            CSS, criando interfaces modernas, rápidas e responsivas. Gosto de
-            desenvolver sites pensados para o usuário, com navegação simples e
-            uma experiência agradável.
+            Olá! Sou Gustavo Andrade, desenvolvedor front-end. Construo
+            interfaces com React, JavaScript e CSS focado em performance,
+            usabilidade e código que escala. Atualmente expandindo para
+            full-stack com Node.js e bancos de dados.
           </p>
         </motion.div>
       </section>
