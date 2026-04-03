@@ -39,20 +39,20 @@ const projects = [
     video: "/videos/Olfati.mp4",
   },
   {
-    title: "Nome do Projeto",
+    title: "Metallica Store",
     description:
-      "Descrição curta do projeto, o que ele faz e quais tecnologias usou.",
-    tags: ["React", "Node.js"],
-    link: "https://seusite.com",
-    image: "",
+      "Projeto de e-commerce desenvolvido na Shopify, com foco na criação do menu e responsividade mobile, lógica do header e ajustes visuais no footer. Projeto ainda não publicado.",
+    tags: ["JavaScript", "Tailwind CSS", "Shopify", "Liquid"],
+    link: "https://www.metallicaacessorios.com.br",
+    video: "/videos/Metal.mp4",
   },
   {
-    title: "Nome do Projeto",
+    title: "Dr Ortop Lucas",
     description:
-      "Descrição curta do projeto, o que ele faz e quais tecnologias usou.",
-    tags: ["React", "Node.js"],
+      "Criação completa desde os metadados até o design, utilizando tecnologias simples e eficazes.",
+    tags: ["Tailwind CSS", "HTML", "Framer Motion"],
     link: "https://seusite.com",
-    image: "",
+    video: "/videos/Olfati.mp4",
   },
 ];
 
