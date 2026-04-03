@@ -48,7 +48,7 @@ const contatos = [
   {
     label: "Whatsapp",
     endereco: "+55 16 98865-5262",
-    href: "https://wa.me/5516988655262?text=Olá,%20Gustavo...",
+    href: "https://wa.me/5516988655262?text=Fala,%20Gustavo!%20Dei%20uma%20olhada%20no%20seu%20portfólio%20e%20curti%20seu%20trabalho.%20Queria%20trocar%20uma%20ideia%20sobre%20um%20projeto/oportunidade.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

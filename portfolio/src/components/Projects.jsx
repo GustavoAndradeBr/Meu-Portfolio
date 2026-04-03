@@ -47,12 +47,12 @@ const projects = [
     video: "/videos/Metal.mp4",
   },
   {
-    title: "Dr Ortop Lucas",
+    title: "Dr Ortop Lucas (EM DESENVOLVIMENTO)",
     description:
-      "Criação completa desde os metadados até o design, utilizando tecnologias simples e eficazes.",
-    tags: ["Tailwind CSS", "HTML", "Framer Motion"],
+      "Site desenvolvido para médico ortopedista em Ribeirão Preto, com projeto completo que abrange desde a definição de metadados até a construção do design, utilizando tecnologias simples, modernas e eficientes para garantir desempenho e boa experiência ao usuário.",
+    tags: ["Tailwind CSS", "HTML", "Framer Motion", "JavaScript"],
     link: "https://seusite.com",
-    video: "/videos/Olfati.mp4",
+    video: "/videos/DrOrtopLucas.mp4",
   },
 ];
 
