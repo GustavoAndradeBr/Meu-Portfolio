@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import myPhoto from "/public/images/asEU.png";
+import myPhoto from "../assets/asEU.png";
 import "./Main.css";
 import Knowledge from "./Knowledge";
 import Projects from "./Projects";
