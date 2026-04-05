@@ -17,7 +17,7 @@ const projects = [
     description:
       "Portfólio pessoal desenvolvido com React, JavaScript, CSS e Framer Motion, focado em design moderno e experiência fluida.",
     tags: ["React", "Framer Motion", "JavaScript", "CSS"],
-    link: "https://seusite.com",
+    link: "https://gustavoandradebr.vercel.app/",
     video: "/videos/Meu.mp4",
     featured: true,
   },
