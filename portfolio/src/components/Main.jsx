@@ -90,10 +90,12 @@ export default function Main() {
           viewport={{ once: true }}
         >
           <p>
-            Olá! Sou Gustavo Andrade, desenvolvedor front-end. Construo
-            interfaces com React, JavaScript e CSS focado em performance,
-            usabilidade e código que escala. Atualmente expandindo para
-            full-stack com Node.js e bancos de dados.
+            Olá! Sou Gustavo Andrade, desenvolvedor front-end apaixonado por
+            criar interfaces modernas e funcionais. Gosto de transformar ideias
+            em experiências digitais rápidas, responsivas e bem estruturadas,
+            sempre focando na usabilidade. Trabalho com React, JavaScript e CSS,
+            e atualmente estou expandindo minhas habilidades para o full-stack
+            com Node.js e bancos de dados.
           </p>
         </motion.div>
       </section>

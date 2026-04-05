@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Projects.css";
 
@@ -56,17 +56,16 @@ const projects = [
   },
 ];
 
-const VISIBLE = 3;
-const TOTAL_PAGES = Math.ceil(projects.length / VISIBLE);
+function getVisible() {
+  if (window.innerWidth < 640) return 1;
+  if (window.innerWidth < 950) return 2;
+  return 3;
+}
 
 function CardMedia({ image, video, title }) {
   const videoRef = useRef(null);
 
-  const handleMouseEnter = () => {
-    if (!videoRef.current) return;
-    videoRef.current.play();
-  };
-
+  const handleMouseEnter = () => videoRef.current?.play();
   const handleMouseLeave = () => {
     if (!videoRef.current) return;
     videoRef.current.pause();
@@ -92,7 +91,6 @@ function CardMedia({ image, video, title }) {
       </div>
     );
   }
-
   if (image) {
     return (
       <div className="project-image">
@@ -100,7 +98,6 @@ function CardMedia({ image, video, title }) {
       </div>
     );
   }
-
   return (
     <div className="project-image">
       <div className="project-placeholder">🖥️</div>
@@ -109,25 +106,39 @@ function CardMedia({ image, video, title }) {
 }
 
 export default function Projects() {
+  const [visibleCount, setVisibleCount] = useState(getVisible);
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(1);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const newVisible = getVisible();
+      setVisibleCount(newVisible);
+      setPage(0);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(projects.length / visibleCount);
+
   const next = () => {
     setDirection(1);
-    setPage((p) => (p + 1) % TOTAL_PAGES);
+    setPage((p) => (p + 1) % totalPages);
   };
 
   const prev = () => {
     setDirection(-1);
-    setPage((p) => (p - 1 + TOTAL_PAGES) % TOTAL_PAGES);
+    setPage((p) => (p - 1 + totalPages) % totalPages);
   };
 
-  const visible = projects.slice(page * VISIBLE, page * VISIBLE + VISIBLE);
+  const visible = projects.slice(
+    page * visibleCount,
+    page * visibleCount + visibleCount,
+  );
 
   return (
     <section id="Projects" className="Projects">
-      <br />
-      <br />
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +167,7 @@ export default function Projects() {
               {visible.map((project, i) => (
                 <a
                   key={i}
-                  href={project.link}
+                  href={project.link || undefined}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`project-card ${project.featured ? "project-card--featured" : ""}`}
@@ -164,17 +175,14 @@ export default function Projects() {
                   {project.featured && (
                     <div className="featured-shine" aria-hidden="true" />
                   )}
-
                   {project.featured && (
                     <span className="featured-badge">✦ destaque</span>
                   )}
-
                   <CardMedia
                     image={project.image}
                     video={project.video}
                     title={project.title}
                   />
-
                   <div className="project-info">
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
@@ -196,7 +204,7 @@ export default function Projects() {
       </div>
 
       <div className="dots">
-        {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
+        {Array.from({ length: totalPages }).map((_, i) => (
           <button
             key={i}
             className={`dot ${i === page ? "active" : ""}`}
