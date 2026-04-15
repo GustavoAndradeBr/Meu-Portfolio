@@ -39,20 +39,20 @@ const projects = [
     video: "/videos/Olfati.mp4",
   },
   {
+    title: "Dr Lucas Coracini",
+    description:
+      "Site desenvolvido para médico ortopedista em Ribeirão Preto, com projeto completo que abrange desde a definição de metadados até a construção do design, utilizando tecnologias simples, modernas e eficientes para garantir desempenho e boa experiência ao usuário.",
+    tags: ["Tailwind CSS", "HTML", "Framer Motion", "JavaScript"],
+    link: "https://dr-lucas-coracini.vercel.app/",
+    video: "/videos/Dr.mp4",
+  },
+  {
     title: "Metallica Store",
     description:
       "Projeto de e-commerce desenvolvido na Shopify, com foco na criação do menu e responsividade mobile, lógica do header e ajustes visuais no footer. Projeto ainda não publicado.",
     tags: ["JavaScript", "Tailwind CSS", "Shopify", "Liquid"],
     link: "https://www.metallicaacessorios.com.br",
     video: "/videos/Metal.mp4",
-  },
-  {
-    title: "Dr Ortop Lucas (EM DESENVOLVIMENTO)",
-    description:
-      "Site desenvolvido para médico ortopedista em Ribeirão Preto, com projeto completo que abrange desde a definição de metadados até a construção do design, utilizando tecnologias simples, modernas e eficientes para garantir desempenho e boa experiência ao usuário.",
-    tags: ["Tailwind CSS", "HTML", "Framer Motion", "JavaScript"],
-    link: "",
-    video: "/videos/DrOrtopLucas.mp4",
   },
 ];
 
