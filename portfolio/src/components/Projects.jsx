@@ -45,6 +45,7 @@ const projects = [
     tags: ["Tailwind CSS", "HTML", "Framer Motion", "JavaScript"],
     link: "https://dr-lucas-coracini.vercel.app/",
     video: "/videos/Dr.mp4",
+    featured: true,
   },
   {
     title: "Metallica Store",
