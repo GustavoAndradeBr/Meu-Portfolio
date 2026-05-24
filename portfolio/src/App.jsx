@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Main />
       <Footer />
+      <Analytics />
       <SpeedInsights />
     </>
   );
